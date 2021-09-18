@@ -4,8 +4,7 @@ name: build
 steps:
   image: node:10
   volumes:
-    - name: npm-cache # npm 缓存挂载路径
-      path: /root/.npm-cache
+    - name: install
       commands:
         - npm install
         - npm run build
