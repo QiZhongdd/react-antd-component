@@ -2,10 +2,13 @@ kind: pipeline
 type: docker
 name: build
 steps:
-  image: guoxudongdocker/node-drone
+  image: node:10
   volumes:
     - name: npm-cache # npm 缓存挂载路径
       path: /root/.npm-cache
       commands:
         - npm install
         - npm run build
+trigger:
+  branch:
+    - main
